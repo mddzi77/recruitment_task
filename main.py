@@ -268,7 +268,7 @@ class App:
             length, date_time = self.input_length(date_time, name_surname)  # length of reservation
             # when all necessary data are collected
             self.db.add_reservation(name_surname[0], name_surname[1], date_time, length)
-            print(f'You successfulyy booked a court for {date_time}\n')
+            print(f'''You successfulyy booked a court for {date_time.strftime('%d.%m.%Y %H:%M')}\n''')
         except GoBackException:
             # return to main menu
             pass
@@ -289,6 +289,8 @@ class App:
 
             # find the closest free time of minimum 30 min
             res = self.db.get_interfering(starting_point)  # get list of reservations
+            if len(res) == 1:
+                return dt.datetime.fromisoformat(res[0][1])
             for i in range(1, len(res)):
                 # time difference between current reservation and previous one
                 diff = dt.datetime.fromisoformat(res[i][0]) - dt.datetime.fromisoformat(res[i - 1][1])
@@ -502,7 +504,7 @@ class App:
                 print('Save schedule        - save schedule from given period of time to file')
                 print('                       of your\'s selected file format and name')
                 print('*commands are not case sensitive*\n')
-                os.system('PAUSE')
+                input('\nPress Enter to continue\n')
             # in case of unknown command
             else:
                 print('Unknown command, type h or help to a list of possible commands')

@@ -20,6 +20,12 @@ class Database:
         except sqlError as err:
             print(err)
 
+    def check(self):
+        """
+        Checks for existence of .db file,
+        if file does not exist create table necessary for function creating with this a .db file
+        """
+
     def new_file(self):
         """
         Create necessary tables in database when there were no .db file
@@ -70,7 +76,7 @@ class Database:
 
         select = 'SELECT r_start, r_end FROM reservations WHERE '
         if end is None:
-            select += f'''r_start>'{start}' '''
+            select += f'''r_start>='{start}' '''
         else:
             select += f'''(r_start<'{end-dt.timedelta(minutes=1)}' AND r_start>='{start}') '''
             select += f'''OR (r_end>'{start}' AND r_end<='{end}') '''
