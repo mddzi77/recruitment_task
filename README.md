@@ -39,7 +39,7 @@ You cancelled your reservation
 ```
 
 ## Print schedule of reservations
-You can view schedule of reservations from choosen period of time by using a ```Print schedule``` command.
+You can view schedule of reservations from chosen period of time by using a ```Print schedule``` command.
 You will have to enter start and end point of your chosen time range.
 Output example:
 ```
@@ -51,7 +51,7 @@ Today:
   Ccc Ddd 15:00 - 16:30
   Aaa Bbb 16:30 - 17:00
 ```
-After printing out schedule you will be bring back to main menu.
+After printing out schedule you will be brought back to main menu.
 
 ## Save schedule to a file
 You can save to file the schedule of reservations from chosen period of time,to do it enter ```Save schedule```.<br>
@@ -71,8 +71,8 @@ File saved succesfully!
 ## Additional notes
 - ```h``` or ```help``` entered in main menu will give you list of possible commands
 - exit program at any point using ```q``` or ```quit``` (will not take effect while entering file name)
-- you can go back to main menu and cancelentering data with ```b``` or ```back``` (like with ```quit``` will not take effect while entering file name)
-- commands are not case sensitive
+- you can go back to main menu and cancel entering data with ```b``` or ```back``` (like with ```quit``` will not take effect while entering file name)
+- commands are not case-sensitive
 
 ### Author
 :pen: Maksymilian Dziemiańczuk  :email: md.dziem@gmail.com
